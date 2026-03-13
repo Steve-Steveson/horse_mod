@@ -3,6 +3,7 @@ package net.steveson.horsemod.entity;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
 import net.minecraft.world.entity.animal.Animal;
+import net.steveson.horsemod.Config;
 
 import javax.annotation.Nullable;
 import java.util.function.Predicate;
@@ -20,7 +21,7 @@ public class NoRiderRandomTargetGoal<T extends LivingEntity> extends NearestAtta
          * method as well.
          */
         public boolean canUse() {
-            return !this.rideableMob.isVehicle() && super.canUse();
+            return (!this.rideableMob.isVehicle() || Config.eatAndRun) && super.canUse();
         }
 
         /**

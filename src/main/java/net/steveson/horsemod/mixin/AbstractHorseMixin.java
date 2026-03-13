@@ -58,7 +58,7 @@ public abstract class AbstractHorseMixin extends Animal{
         } else {
             double parentValue1 = Mth.clamp(pValue1, cfgMin, cfgMax);
             double parentValue2 = Mth.clamp(pValue2, cfgMin, cfgMax);
-            if (Math.abs(parentValue1 - parentValue2) <= 0.0025 * (pMax-pMin)){
+            if (Config.keepMatching && Math.abs(parentValue1 - parentValue2) <= 0.0025 * (pMax-pMin)){
                 double avr = (cfgMax + cfgMin) / 2;
                 if (Math.abs(avr - parentValue1) >= Math.abs(avr - parentValue2)) {
                     return parentValue1;

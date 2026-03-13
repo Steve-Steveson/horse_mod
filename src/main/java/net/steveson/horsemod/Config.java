@@ -31,6 +31,7 @@ public class Config
 
     // 0.4 - 1
     private static final ForgeConfigSpec.DoubleValue H_MAX_JUMP = BUILDER
+            .comment("")
             .comment("Highest possible Jump Strength attainable when breeding Horses")
             .comment("Values higher that 2 wouldn't work anyway")
             .comment("Vanilla value: 1.0")
@@ -42,6 +43,7 @@ public class Config
 
     // 0.1125 - 0.3375
     private static final ForgeConfigSpec.DoubleValue H_MAX_SPEED = BUILDER
+            .comment("")
             .comment("Highest possible Speed value attainable when breeding Horses")
             .comment("Multiply by 42.16 to approximate blocks/second")
             .comment("Vanilla value: 0.3375")
@@ -52,12 +54,23 @@ public class Config
             .defineInRange("minSpeed", 0.1125, 0, 25);
 
     private static final ForgeConfigSpec.BooleanValue H_EATS_CHICKENS = BUILDER
+            .comment("")
             .comment("Whether horses can have a little snack as a treat")
             .define("getHungry", true);
+
+    private static final ForgeConfigSpec.BooleanValue FAST_FOOD = BUILDER
+            .comment("Whether horses can snack while being ridden")
+            .define("fastFood", false);
+
+    private static final ForgeConfigSpec.BooleanValue KEEP_MATCHING_STATS = BUILDER
+            .comment("Whether 2 horses with a nearly identical stat value  should pass on that value unchanged")
+            .define("keepMatchingStats", true);
 
     static final ForgeConfigSpec SPEC = BUILDER.build();
 
     public static boolean eatChicken;
+    public static boolean eatAndRun;
+    public static boolean keepMatching;
     public static double maxHealth;
     public static double minHealth;
     public static double maxJump;
@@ -69,6 +82,8 @@ public class Config
     static void onLoad(final ModConfigEvent event)
     {
         eatChicken = H_EATS_CHICKENS.get();
+        eatAndRun = FAST_FOOD.get();
+        keepMatching = KEEP_MATCHING_STATS.get();
         maxHealth = H_MAX_HEALTH.get();
         minHealth = H_MIN_HEALTH.get();
         maxJump = H_MAX_JUMP.get();
