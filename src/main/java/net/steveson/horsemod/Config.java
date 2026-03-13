@@ -32,22 +32,24 @@ public class Config
     // 0.4 - 1
     private static final ForgeConfigSpec.DoubleValue H_MAX_JUMP = BUILDER
             .comment("Highest possible Jump Strength attainable when breeding Horses")
+            .comment("Values higher that 2 wouldn't work anyway")
             .comment("Vanilla value: 1.0")
-            .defineInRange("maxJump", 1.0, 0, 255);
+            .defineInRange("maxJump", 1.0, 0, 2);
     private static final ForgeConfigSpec.DoubleValue H_MIN_JUMP = BUILDER
             .comment("Lowest possible Jump Strength attainable when breeding Horses")
             .comment("Vanilla value: 0.4")
-            .defineInRange("minJump", 0.4, 0, 255);
+            .defineInRange("minJump", 0.4, 0, 2);
 
     // 0.1125 - 0.3375
     private static final ForgeConfigSpec.DoubleValue H_MAX_SPEED = BUILDER
             .comment("Highest possible Speed value attainable when breeding Horses")
+            .comment("Multiply by 42.16 to approximate blocks/second")
             .comment("Vanilla value: 0.3375")
-            .defineInRange("maxSpeed", 0.3375, 0, 100);
+            .defineInRange("maxSpeed", 0.3375, 0, 25);
     private static final ForgeConfigSpec.DoubleValue H_MIN_SPEED = BUILDER
             .comment("Lowest possible Speed value attainable when breeding Horses")
             .comment("Vanilla value: 0.1125")
-            .defineInRange("minSpeed", 0.1125, 0, 100);
+            .defineInRange("minSpeed", 0.1125, 0, 25);
 
     private static final ForgeConfigSpec.BooleanValue H_EATS_CHICKENS = BUILDER
             .comment("Whether horses can have a little snack as a treat")

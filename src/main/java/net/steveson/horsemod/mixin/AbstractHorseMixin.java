@@ -53,7 +53,7 @@ public abstract class AbstractHorseMixin extends Animal{
             cfgMin = Config.minSpeed;
         }
 //        System.out.println(pMax + " became " + cfgMax);
-        if (pMax <= pMin || cfgMax <= cfgMin) {
+        if (pMax <= pMin || cfgMax < cfgMin) {
             throw new IllegalArgumentException("Incorrect range for an attribute");
         } else {
             double parentValue1 = Mth.clamp(pValue1, cfgMin, cfgMax);
@@ -87,12 +87,9 @@ public abstract class AbstractHorseMixin extends Animal{
     @Overwrite
     // this uses "extends Animal"
     protected int calculateFallDamage(float pDistance, float pDamageMultiplier) {
-        double jumpMod;
-        if (getAttributeValue(Attributes.JUMP_STRENGTH) < 1){
-            jumpMod = 0;
-        } else {
-            jumpMod = getAttributeValue(Attributes.JUMP_STRENGTH) * getAttributeValue(Attributes.JUMP_STRENGTH) - 1;
-        }
-        return Mth.ceil((pDistance * 0.5F - 3.0F - jumpMod * 3) * pDamageMultiplier);
+        double jumpValue = Mth.clamp(getAttributeValue(Attributes.JUMP_STRENGTH), 1, 2);
+        double jumpHeight = jumpValue * jumpValue * 3.6 + 2.3;
+
+        return Mth.ceil(((pDistance - jumpHeight + 5.9) * 0.5F - 3.0F) * pDamageMultiplier);
     }
 }
