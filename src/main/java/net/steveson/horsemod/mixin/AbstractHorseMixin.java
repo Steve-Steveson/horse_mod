@@ -35,8 +35,8 @@ public abstract class AbstractHorseMixin extends Animal{
     }
 
     /**
-     * @author
-     * @reason
+     * @author Minecraft
+     * @reason Complete re-write of to use config min and max, keep matching stats, and not lose max stats every time.
      */
     @Overwrite
     static double createOffspringAttribute(double pValue1, double pValue2, double pMin, double pMax, RandomSource pRandom) {
@@ -81,12 +81,18 @@ public abstract class AbstractHorseMixin extends Animal{
     }
 
     /**
-     * @author
+     * @author Minecraft
      * @reason fall damage reduction for ultra-high jumpers
      */
     @Overwrite
-    // this also uses "extends Animal"
+    // this uses "extends Animal"
     protected int calculateFallDamage(float pDistance, float pDamageMultiplier) {
-        return Mth.ceil((pDistance * 0.5F - 3.0F - getAttributeValue(Attributes.JUMP_STRENGTH) * 3) * pDamageMultiplier);
+        double jumpMod;
+        if (getAttributeValue(Attributes.JUMP_STRENGTH) < 1){
+            jumpMod = 0;
+        } else {
+            jumpMod = getAttributeValue(Attributes.JUMP_STRENGTH) * getAttributeValue(Attributes.JUMP_STRENGTH) - 1;
+        }
+        return Mth.ceil((pDistance * 0.5F - 3.0F - jumpMod * 3) * pDamageMultiplier);
     }
 }

@@ -11,6 +11,7 @@ import net.minecraft.world.entity.animal.horse.AbstractHorse;
 import net.minecraft.world.entity.animal.horse.Horse;
 import net.minecraft.world.level.Level;
 import net.steveson.horsemod.Config;
+import net.steveson.horsemod.entity.NoRiderRandomTargetGoal;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Unique;
 
@@ -28,7 +29,8 @@ public class HorseMixin extends AbstractHorse{
         super.addBehaviourGoals();
         if(Config.eatChicken) {
             this.goalSelector.addGoal(5, new MeleeAttackGoal(this, 1.0D, true));
-            this.targetSelector.addGoal(5, new NearestAttackableTargetGoal<>(this, Chicken.class, true, PREY_SELECTOR));
+//            this.targetSelector.addGoal(5, new NearestAttackableTargetGoal<>(this, Chicken.class, true, PREY_SELECTOR));
+            this.targetSelector.addGoal(5, new NoRiderRandomTargetGoal<>(this, Chicken.class, true, true, PREY_SELECTOR));
         }
     }
 
