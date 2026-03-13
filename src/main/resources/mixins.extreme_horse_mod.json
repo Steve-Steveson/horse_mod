@@ -7,7 +7,7 @@
     "defaultRequire": 1
   },
   "mixins": [
-    "AbstractHorseAttackMixin",
-    "AbstractHorseMixin"
+    "AbstractHorseMixin",
+    "HorseMixin"
   ]
 }
