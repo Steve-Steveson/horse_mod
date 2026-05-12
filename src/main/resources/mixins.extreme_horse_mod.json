@@ -2,7 +2,7 @@
   "required": true,
   "compatibilityLevel": "JAVA_17",
   "package": "net.steveson.horsemod.mixin",
-  "refmap": "mixins.mymod.refmap.json",
+  "refmap": "mixins.extreme_horse_mod.refmap.json",
   "injectors": {
     "defaultRequire": 1
   },

@@ -173,7 +173,7 @@ tasks.named('processResources', ProcessResources).configure {
 
 mixin {
     // MixinGradle Settings
-    add sourceSets.main, 'mixins.horsemod.refmap.json'
+    add sourceSets.main, 'mixins.extreme_horse_mod.refmap.json'
     config 'mixins.extreme_horse_mod.json'
 
     debug.verbose = true
