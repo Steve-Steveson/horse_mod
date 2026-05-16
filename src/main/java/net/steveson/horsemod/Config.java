@@ -66,6 +66,11 @@ public class Config
             .comment("Whether 2 horses with a nearly identical stat value  should pass on that value unchanged")
             .define("keepMatchingStats", true);
 
+    private static final ForgeConfigSpec.DoubleValue BETTER_LLAMA_CHANCE = BUILDER
+            .comment("Chance that a baby llama will have a higher strength that its strongest parent")
+            .comment("Chance doubles if both parents have the same strength")
+            .defineInRange("strongerLlamaChance", 0.05, 0, 0.5);
+
     static final ForgeConfigSpec SPEC = BUILDER.build();
 
     public static boolean eatChicken;
@@ -77,6 +82,7 @@ public class Config
     public static double minJump;
     public static double maxSpeed;
     public static double minSpeed;
+    public static double buildBetterLlamas;
 
     @SubscribeEvent
     static void onLoad(final ModConfigEvent event)
@@ -90,5 +96,6 @@ public class Config
         minJump = H_MIN_JUMP.get();
         maxSpeed = H_MAX_SPEED.get();
         minSpeed = H_MIN_SPEED.get();
+        buildBetterLlamas = BETTER_LLAMA_CHANCE.get();
     }
 }
