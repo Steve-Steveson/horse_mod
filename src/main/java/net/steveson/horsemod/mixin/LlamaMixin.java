@@ -48,11 +48,9 @@ public class LlamaMixin extends AbstractChestedHorse {
         double cfgChance = Config.buildBetterLlamas;
         double getBetter = (mommy == daddy ? 2 * cfgChance : cfgChance);
 
-
         if (this.random.nextFloat() < getBetter) {
             j = max + 1;
         }
-//        System.out.println("I AM A BUFF LLAMA I AM " + j + " STRONG");
         return j;
     }
 

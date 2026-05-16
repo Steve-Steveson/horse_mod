@@ -69,7 +69,7 @@ public class Config
     private static final ForgeConfigSpec.DoubleValue BETTER_LLAMA_CHANCE = BUILDER
             .comment("Chance that a baby llama will have a higher strength that its strongest parent")
             .comment("Chance doubles if both parents have the same strength")
-            .defineInRange("strongerLlamaChance", 0.05, 0, 0.5);
+            .defineInRange("strongerLlamaChance", 0.04, 0, 0.5);
 
     static final ForgeConfigSpec SPEC = BUILDER.build();
 
