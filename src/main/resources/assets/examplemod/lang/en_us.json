@@ -1,13 +1,16 @@
 {
-  "itemGroup.examplemod": "Example Mod Tab",
-  "block.examplemod.example_block": "Example Block",
-  "item.examplemod.example_item": "Example Item",
+  "extreme_horse_mod.configuration.title": "Extreme Horse Stats Configs",
+  "extreme_horse_mod.configuration.section.extreme_horse_mod.common.toml": "Extreme Horse Stats Configs",
+  "extreme_horse_mod.configuration.section.extreme_horse_mod.common.toml.title": "Extreme Horse Stats Configs",
 
-  "examplemod.configuration.title": "Example Mod Configs",
-  "examplemod.configuration.section.examplemod.common.toml": "Example Mod Configs",
-  "examplemod.configuration.section.examplemod.common.toml.title": "Example Mod Configs",
-  "examplemod.configuration.items": "Item List",
-  "examplemod.configuration.logDirtBlock": "Log Dirt Block",
-  "examplemod.configuration.magicNumberIntroduction": "Magic Number Text",
-  "examplemod.configuration.magicNumber": "Magic Number"
+  "extreme_horse_mod.configuration.maxHealth": "Maximum Horse Health",
+  "extreme_horse_mod.configuration.minHealth": "Minimum Horse Health",
+  "extreme_horse_mod.configuration.maxJump": "Maximum Horse Jump Height",
+  "extreme_horse_mod.configuration.minJump": "Minimum Horse Jump Height",
+  "extreme_horse_mod.configuration.maxSpeed": "Maximum Horse Speed",
+  "extreme_horse_mod.configuration.minSpeed": "Minimum Horse Speed",
+  "extreme_horse_mod.configuration.getHungry": "Have a little treat",
+  "extreme_horse_mod.configuration.fastFood": "Eat & Run",
+  "extreme_horse_mod.configuration.keepMatchingStats": "Pass On Matching Stats",
+  "extreme_horse_mod.configuration.strongerLlamaChance": "Stronger Llama Chance"
 }
